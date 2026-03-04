@@ -1,266 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HARIBALA P | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>FutureTech</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    .glass {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-      transition: 0.3s;
-    }
+<style>
 
-    .glass:hover {
-      transform: translateY(-8px);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    .profile-img {
-      width: 260px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #22d3ee;
-      box-shadow: 0 0 25px #22d3ee;
-      transition: 0.4s ease;
-    }
+body{
+background:#f5f7ff;
+color:#222;
+scroll-behavior:smooth;
+}
 
-    .profile-img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 45px #22d3ee;
-    }
+/* NAVBAR */
 
-  </style>
+nav{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(12px);
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:#6c63ff;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#6c63ff;
+}
+
+/* HERO */
+
+#hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#6c63ff,#00d9ff);
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+#hero h1{
+font-size:64px;
+margin-bottom:10px;
+}
+
+#hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+.hero-btn{
+margin-top:25px;
+padding:12px 32px;
+border:none;
+border-radius:30px;
+background:white;
+color:#333;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+transform:scale(1.1);
+}
+
+/* FLOATING CIRCLES */
+
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.2);
+animation:float 6s infinite ease-in-out;
+}
+
+.circle1{
+width:120px;
+height:120px;
+top:20%;
+left:10%;
+}
+
+.circle2{
+width:200px;
+height:200px;
+bottom:10%;
+right:10%;
+animation-delay:2s;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-25px)}
+100%{transform:translateY(0)}
+}
+
+/* SECTION TITLES */
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin:70px 0 40px;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:40px;
+}
+
+.feature-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-8px);
+}
+
+.feature-card i{
+font-size:28px;
+color:#6c63ff;
+margin-bottom:10px;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:40px;
+}
+
+.service-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.service-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.service-card:hover{
+transform:scale(1.05);
+}
+
+.service-content{
+padding:20px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.portfolio img{
+width:100%;
+border-radius:10px;
+transition:0.4s;
+}
+
+.portfolio img:hover{
+transform:scale(1.08);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+max-width:700px;
+margin:auto;
+text-align:center;
+padding:50px;
+position:relative;
+}
+
+.testimonial{
+display:none;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.testimonial.active{
+display:block;
+}
+
+.testimonial p{
+font-style:italic;
+margin-bottom:10px;
+}
+
+/* DOTS */
+
+.dots{
+margin-top:20px;
+}
+
+.dot{
+height:10px;
+width:10px;
+margin:5px;
+background:#ccc;
+display:inline-block;
+border-radius:50%;
+cursor:pointer;
+}
+
+.dot.active{
+background:#6c63ff;
+}
+
+/* CONTACT */
+
+.contact{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+padding:40px;
+}
+
+input,textarea{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+.social i{
+margin:10px;
+font-size:20px;
+}
+
+</style>
 </head>
 
 <body>
 
+<nav>
+
+<div class="logo">FutureTech</div>
+
+<ul class="nav-links">
+<li><a href="#hero">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
 <!-- HERO -->
-<section class="min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left px-6 gap-12">
 
-  <img src="profile.jpeg" alt="HARIBALA P" class="profile-img">
-  <a href="https://github.com/haribalap-dev" target="_blank" class="btn btn-dark">
-  View My GitHub
-</a>
+<section id="hero">
 
-  <div>
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
-      Hi, I'm <span class="text-cyan-400">HARIBALA P</span>
-    </h1>
+<h1>Build The Future</h1>
+<p>Creative digital experiences for modern businesses</p>
 
-    <h2 class="text-2xl md:text-3xl mb-4">
-      <span id="typing"></span>
-    </h2>
+<button class="hero-btn">Get Started</button>
 
-    <p class="max-w-xl text-gray-300 mb-6">
-      Passionate Web Developer focused on building secure, responsive and high-performance applications.
-    </p>
-
-    <a href="#projects" class="btn btn-info">View My Projects</a>
-  </div>
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
 
 </section>
 
-<!-- ABOUT -->
-<section class="py-20 px-6 text-center">
-  <div class="container glass">
-    <h2 class="text-4xl font-bold mb-6 text-cyan-400">About Me</h2>
+<!-- FEATURES -->
 
-    <p class="text-lg text-gray-200 leading-relaxed">
-      I am HARIBALA P from Sri Krishna College of Engineering and Technology.
-      I am passionate about Web Development and modern UI design.
+<h2 class="section-title">Features</h2>
 
-      I have strong interest in Web Security and secure coding practices.
-      I enjoy learning about cybersecurity fundamentals and building safe web applications.
-    </p>
-  </div>
+<section class="features">
+
+<div class="feature-card">
+<i class="fas fa-bolt"></i>
+<h3>Fast Performance</h3>
+<p>Lightning fast loading speeds.</p>
+</div>
+
+<div class="feature-card">
+<i class="fas fa-mobile-alt"></i>
+<h3>Responsive</h3>
+<p>Works perfectly on every device.</p>
+</div>
+
+<div class="feature-card">
+<i class="fas fa-lock"></i>
+<h3>Secure</h3>
+<p>Enterprise-level security.</p>
+</div>
+
 </section>
 
-<!-- SKILLS -->
-<section class="py-20 px-6 text-center">
-  <h2 class="text-4xl font-bold mb-10 text-cyan-400">My Skills</h2>
+<!-- SERVICES -->
 
-  <div class="container grid md:grid-cols-3 gap-6">
+<h2 class="section-title">Services</h2>
 
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-2">Frontend</h4>
-      <p>HTML, CSS, JavaScript, Tailwind CSS, Bootstrap</p>
-    </div>
+<section class="services">
 
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-2">Tools</h4>
-      <p>Git, GitHub, VS Code</p>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<div class="service-content">
+<h3>Web Development</h3>
+<p>Modern responsive websites.</p>
+</div>
+</div>
 
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-2">Security Interest</h4>
-      <p>OWASP Basics, XSS Awareness, Secure Coding</p>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766">
+<div class="service-content">
+<h3>UI / UX Design</h3>
+<p>Beautiful digital experiences.</p>
+</div>
+</div>
 
-  </div>
-</section><!-- CERTIFICATIONS SECTION -->
-<section class="py-20 px-6 text-center">
-  <h2 class="text-4xl font-bold mb-12 text-cyan-400">Certifications</h2>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<div class="service-content">
+<h3>Brand Strategy</h3>
+<p>Build strong brands.</p>
+</div>
+</div>
 
-  <div class="container grid md:grid-cols-3 gap-6">
-
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🛡 TryHackMe</h4>
-      <p>
-        Completed multiple cybersecurity labs and practical challenges 
-        focusing on penetration testing, network security and vulnerability analysis.
-      </p>
-    </div>
-
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">💻 Full Stack Development</h4>
-      <p>
-        Certified in Full Stack Web Development covering frontend, backend fundamentals 
-        and database integration concepts.
-      </p>
-    </div>
-
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">📶 WiFi Pentesting</h4>
-      <p>
-        Learned wireless security concepts including WiFi vulnerabilities, 
-        network scanning and ethical penetration testing techniques.
-      </p>
-    </div>
-
-  </div>
 </section>
 
+<!-- PORTFOLIO -->
 
+<h2 class="section-title">Projects</h2>
 
-<!-- ACHIEVEMENTS SECTION -->
-<section class="py-20 px-6 text-center">
-  <h2 class="text-4xl font-bold mb-12 text-cyan-400">Achievements</h2>
+<section class="portfolio">
 
-  <div class="container grid md:grid-cols-3 gap-6">
+<img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a">
+<img src="https://images.unsplash.com/photo-1522199710521-72d69614c702">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
+<img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd">
 
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🏁 CTF Competitions</h4>
-      <p>
-        Actively participated in Capture The Flag competitions solving real-world 
-        cybersecurity challenges including cryptography and web exploitation.
-      </p>
-    </div>
-
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🐞 Bug Bounty Participation</h4>
-      <p>
-        Explored vulnerability research and bug bounty programs to identify 
-        security flaws and improve secure coding awareness.
-      </p>
-    </div>
-
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🎖 Technical Participation</h4>
-      <p>
-        Participated in technical workshops, hackathons and cybersecurity events 
-        to continuously enhance practical knowledge.
-      </p>
-    </div>
-
-  </div>
 </section>
 
+<!-- TESTIMONIALS -->
 
+<h2 class="section-title">Testimonials</h2>
 
+<section class="testimonials">
 
+<div class="testimonial active">
+<p>"Fantastic website design and smooth animations!"</p>
+<h4>- Sarah</h4>
+</div>
 
-<!-- PROJECTS -->
-<section id="projects" class="py-20 px-6 text-center">
-  <h2 class="text-4xl font-bold mb-12 text-cyan-400">My Projects</h2>
+<div class="testimonial">
+<p>"Very modern UI and great performance."</p>
+<h4>- Alex</h4>
+</div>
 
-  <div class="container grid md:grid-cols-3 gap-6">
+<div class="testimonial">
+<p>"Professional team and great results."</p>
+<h4>- Michael</h4>
+</div>
 
-    <!-- Project 1 -->
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🛒 E-Commerce Website</h4>
-      <p class="mb-3">
-        Fully responsive online shopping website with product listings, cart functionality 
-        and interactive UI design.
-      </p>
-      <p class="text-cyan-300">HTML, CSS, JavaScript</p>
-    </div>
+<div class="testimonial">
+<p>"Our business website improved drastically."</p>
+<h4>- Emma</h4>
+</div>
 
-    <!-- Project 2 -->
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🌦 Weather App</h4>
-      <p class="mb-3">
-        Real-time weather application using API integration to fetch live weather data 
-        based on user location.
-      </p>
-      <p class="text-cyan-300">JavaScript, API, Bootstrap</p>
-    </div>
+<div class="testimonial">
+<p>"Clean design and very responsive."</p>
+<h4>- David</h4>
+</div>
 
-    <!-- Project 3 -->
-    <div class="glass">
-      <h4 class="text-xl font-bold mb-3">🔐 Secure Login System</h4>
-      <p class="mb-3">
-        Login authentication system implementing secure form validation 
-        and basic security best practices.
-      </p>
-      <p class="text-cyan-300">HTML, CSS, JavaScript</p>
-    </div>
+<div class="testimonial">
+<p>"Amazing experience working with them."</p>
+<h4>- Sophia</h4>
+</div>
 
-  </div>
+<div class="dots"></div>
+
 </section>
 
 <!-- CONTACT -->
-<section class="py-20 px-6 text-center">
-  <div class="container glass">
-    <h2 class="text-4xl font-bold mb-6 text-cyan-400">Contact Me</h2>
-    <p>📧 haribala3626@gmail.com</p>
-  </div>
-</section>
 
-<footer class="text-center py-6 text-gray-400">
-  © 2026 HARIBALA P | Custom Coded Portfolio  
-  <br>
-  AI tools like ChatGPT were used for guidance and code suggestions.
+<h2 class="section-title">Contact</h2>
+
+<form class="contact" id="contactForm">
+
+<input type="text" placeholder="Name" id="name" required>
+<input type="email" placeholder="Email" id="email" required>
+<textarea placeholder="Message"></textarea>
+
+<button class="hero-btn">Send Message</button>
+
+</form>
+
+<footer>
+
+<p>© 2026 FutureTech</p>
+
+<div class="social">
+<i class="fab fa-twitter"></i>
+<i class="fab fa-github"></i>
+<i class="fab fa-linkedin"></i>
+</div>
+
 </footer>
 
 <script>
-  const text = "Frontend Developer | Web Security Enthusiast | Problem Solver";
-  let index = 0;
-  function typeEffect() {
-    if (index < text.length) {
-      document.getElementById("typing").innerHTML += text.charAt(index);
-      index++;
-      setTimeout(typeEffect, 70);
-    }
-  }
-  window.onload = typeEffect;
+
+/* TESTIMONIAL CAROUSEL */
+
+let index=0
+const testimonials=document.querySelectorAll(".testimonial")
+const dotsContainer=document.querySelector(".dots")
+
+testimonials.forEach((_,i)=>{
+
+let dot=document.createElement("span")
+dot.classList.add("dot")
+
+if(i===0) dot.classList.add("active")
+
+dot.addEventListener("click",()=>{
+showTestimonial(i)
+})
+
+dotsContainer.appendChild(dot)
+
+})
+
+const dots=document.querySelectorAll(".dot")
+
+function showTestimonial(i){
+
+testimonials.forEach(t=>t.classList.remove("active"))
+dots.forEach(d=>d.classList.remove("active"))
+
+testimonials[i].classList.add("active")
+dots[i].classList.add("active")
+
+index=i
+
+}
+
+setInterval(()=>{
+
+index=(index+1)%testimonials.length
+
+showTestimonial(index)
+
+},4000)
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+let name=document.getElementById("name").value
+let email=document.getElementById("email").value
+
+if(name.length<3){
+alert("Name must be 3+ characters")
+return
+}
+
+if(!email.includes("@")){
+alert("Invalid email")
+return
+}
+
+alert("Message sent successfully!")
+
+})
+
 </script>
 
 </body>
